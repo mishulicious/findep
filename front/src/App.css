@@ -1,28 +1,50 @@
 .App {
-  text-align: center;
+    text-align: center;
 }
 
-.App-logo {
-  animation: App-logo-spin infinite 20s linear;
-  height: 80px;
+.ui.modal {
+    left: 20%;
 }
 
-.App-header {
-  background-color: #222;
-  height: 150px;
-  padding: 20px;
-  color: white;
+.ui.modal>.content>.icon+.description,
+.ui.modal>.content>.image+.description {
+    width: 60%;
 }
 
-.App-title {
-  font-size: 1.5em;
+.secondary a {
+    color: black;
 }
 
-.App-intro {
-  font-size: large;
+.secondary a:hover {
+    color: #da00f7;
 }
 
-@keyframes App-logo-spin {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+.ui.secondary.menu .active.item {
+    background: none !important;
+}
+
+.ui.secondary.menu .active.item a {
+    color: #da00f7 !important;
+}
+
+a.item:hover {
+    background: none !important;
+    color: black !important;
+}
+
+h2 {
+    color: purple;
+}
+
+.ui.vertical.menu {
+    height: 100%;
+}
+
+.perfil {
+    overflow: hidden;
+}
+
+.comienza {
+    height: 400px;
+    background-image: "https://image.freepik.com/free-vector/shooting-star-and-star-universe-background-illustration_35632-56.jpg";
 }

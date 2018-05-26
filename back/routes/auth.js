@@ -13,16 +13,19 @@ router.post('/login', passport.authenticate('local'), (req, res, next) => {
 });
 
 router.post('/signup', (req, res) => {
+    /*     if (req.body.password !== req.body.password2) {
+            return res.render("auth/signup", { info: "Las contraseñas no coinciden :(" })
+        } */
     User.register(req.body, req.body.password, (err, user) => {
         if (err) return res.json(err);
         res.json(user);
     })
 });
 
-router.get('/logout', isAuthenticated, (req, res) => {
+router.get('/logout', (req, res) => {
     req.logout();
     res.status(200);
-    res.send("Adios papud");
+    res.json({ message: "Adios papud" });
 });
 
 router.get("/profile", isAuthenticated, (req, res) => {

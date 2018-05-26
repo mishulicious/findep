@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        #btn-salir {
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+    <button id="btn-registro" onclick="registrarse()">Entra gugel</button>
+
+    <div id="har">
+        <p id="name"></p>
+        <p id="email"></p>
+
+    </div>
+
+    <button id="btn-salir" onclick="salir()">Salir</button>
+
+    <script src="https://www.gstatic.com/firebasejs/5.0.4/firebase.js"></script>
+    <script>
+        // Initialize Firebase
+        var config = {
+            apiKey: "AIzaSyCQ8YL8HUyX00mOPvbevPM9zURV4IacDmg",
+            authDomain: "findepplatform.firebaseapp.com",
+            databaseURL: "https://findepplatform.firebaseio.com",
+            projectId: "findepplatform",
+            storageBucket: "",
+            messagingSenderId: "698802417122"
+        };
+        firebase.initializeApp(config);
+    </script>
+    <script src="app.js"></script>
+</body>
+
+</html>
