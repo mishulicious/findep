@@ -42,12 +42,11 @@ class Navbar extends Component {
       <div>
       
         <Menu secondary>
-        <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleClick}> <Link to='/'><Image src="http://res.cloudinary.com/alinardz/image/upload/v1527385056/findep-logo-01.png" style={{"width":"150px"}}></Image></Link></Menu.Item>
-        
-          {/* <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleClick}> <Link to='/'>Home {user.name}</Link> </Menu.Item> */}
+        <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleClick} as={Link} to='/'>
+          <Image src="http://res.cloudinary.com/alinardz/image/upload/v1527385056/findep-logo-01.png" style={{width:"150px", marginLeft: isLoggedIn? '350%':'0'}}></Image></Menu.Item>
            <Menu.Menu position='right'>
 
-            <Menu.Item name='perfil' active={activeItem === 'perfil'} style={{display: isLoggedIn? 'block': 'none'}}  onClick={this.handleClick}><Link to='/perfil'>Perfil</Link></Menu.Item>
+            <Menu.Item name='Perfil' active={activeItem === 'perfil'} style={{display: isLoggedIn? 'block': 'none'}}  onClick={this.handleClick} as={Link} to='/perfil'/>
 
             <Modal size="small" trigger={<Menu.Item name='ingresa' style={{display: !isLoggedIn? 'block': 'none'}}><Link to='/'>Ingresa</Link></Menu.Item>}>
                 <Modal.Header>Ingresa</Modal.Header>
@@ -60,7 +59,7 @@ class Navbar extends Component {
             </Modal>
 
 
-            <Modal size="small" trigger={<Menu.Item name='ingresa' style={{display: !isLoggedIn? 'block': 'none'}}><Link to='/'>Inicia Sesión</Link></Menu.Item>}>
+            <Modal size="small" trigger={<Menu.Item name='ingresa' style={{display: !isLoggedIn? 'block': 'none'}} as={Link} to='/'>Inicia Sesión</Menu.Item>}>
                 <Modal.Header>Inicia Sesión</Modal.Header>
                 <Modal.Content image>
                 <Image wrapped size='medium' src='http://bldgwlf.com/wp-content/uploads/2016/01/Naomi-Wilkinson-03.gif' />
@@ -70,11 +69,9 @@ class Navbar extends Component {
                 </Modal.Content>
             </Modal>
 
-            <Menu.Item name='diagnóstico' active={activeItem === 'diagnóstico'} onClick={this.handleClick}><Link to='/diagnostico'>Diagnóstico</Link></Menu.Item>
-            
+            <Menu.Item name='diagnóstico' active={activeItem === 'diagnóstico'} onClick={this.handleClick} as={Link} to='/diagnostico'>Diagnóstico</Menu.Item>
             <Menu.Item name='logout' style={{display: isLoggedIn? 'block': 'none'}} active={activeItem === 'logout'} onClick={this.handleLogout}>Cerrar Sesión</Menu.Item>
-
-            <Menu.Item name='blog' active={activeItem === 'blog'} onClick={this.handleClick}><Link to='/blog'>Blog</Link></Menu.Item>
+            <Menu.Item name='blog' active={activeItem === 'blog'} onClick={this.handleClick} as={Link} to='/blog'/>
 
 {/*             BARRA BUSQUEDA
             <Menu.Item>

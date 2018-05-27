@@ -21,9 +21,6 @@
 
 .ui.secondary.menu .active.item {
     background: none !important;
-}
-
-.ui.secondary.menu .active.item a {
     color: #EB71A5 !important;
 }
 

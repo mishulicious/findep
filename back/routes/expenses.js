@@ -8,6 +8,8 @@ function isAuthenticated(req, res, next) {
 }
 
 router.post('/new', isAuthenticated, (req, res) => {
+    //nuevo
+    req.body.user = req.user._id;
     Expense.create(req.body)
         .then(expense => {
             res.json(expense);

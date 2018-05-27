@@ -1,6 +1,34 @@
 import React, {Component} from 'react';
 import { Card, Image, Button, Progress } from 'semantic-ui-react';
 
+export const Meta =({name,user,picture,description})=> {
+        return(
+          <div style={{marginLeft:"3%"}}>
+            <Card>
+            <Image src={picture ? picture : "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"} />
+            <Card.Content>
+              <Card.Header>{name}</Card.Header>
+              <Card.Meta>
+                <span className='date'>
+                  Mayo 2019
+                </span>
+              </Card.Meta>
+              <Card.Description>
+                Llevas: Te falta:
+              </Card.Description>
+            </Card.Content>
+            <Card.Content extra>
+                <Progress indicating />
+                <Button>Increment</Button>
+            </Card.Content>
+          </Card>
+          </div>
+        )
+}
+/* 
+import React, {Component} from 'react';
+import { Card, Image, Button, Progress } from 'semantic-ui-react';
+
 class Meta extends Component {
     state ={ percent: 33 }
 
@@ -33,4 +61,4 @@ class Meta extends Component {
 
 }
 
-export default Meta;
+export default Meta; */

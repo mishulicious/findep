@@ -1,5 +1,6 @@
-import React, { Component } from 'react'
-import { Menu, Header, Image, Icon } from 'semantic-ui-react'
+import React, { Component } from 'react';
+import { Menu, Header, Image, Icon } from 'semantic-ui-react';
+import {Link} from 'react-router-dom';
 
 class MenuPerfil extends Component {
   state={
@@ -31,6 +32,7 @@ class MenuPerfil extends Component {
             name='resumen'
             active={activeItem === 'resumen'}
             onClick={this.handleItemClick}
+            as={Link} to='/perfil'
           >
               <Header as='h4'>
               <Icon name='block layout' />
@@ -44,6 +46,7 @@ class MenuPerfil extends Component {
             name='diagnostico'
             active={activeItem === 'diagnostico'}
             onClick={this.handleItemClick}
+            as={Link} to='/diagnostico'
           >
               <Header as='h4'>
                 <Icon name='file outline' />
@@ -57,6 +60,7 @@ class MenuPerfil extends Component {
             name='registro'
             active={activeItem === 'registro'}
             onClick={this.handleItemClick}
+            as={Link} to='/registro'
           >
               <Header as='h4'>
                 <Icon name='calendar outline' />
@@ -70,6 +74,7 @@ class MenuPerfil extends Component {
             name='metas'
             active={activeItem === 'metas'}
             onClick={this.handleItemClick}
+            as={Link} to='/metas'
           >
               <Header as='h4'>
                 <Icon name='tasks' />
@@ -83,6 +88,7 @@ class MenuPerfil extends Component {
             name='presupuesto'
             active={activeItem === 'presupuesto'}
             onClick={this.handleItemClick}
+            as={Link} to='/presupuesto'
           >
               <Header as='h4'>
                 <Icon name='calculator' />
@@ -94,6 +100,7 @@ class MenuPerfil extends Component {
 
           <Menu.Item
             name='tips'
+            as={Link} to='/blog'
             active={activeItem === 'tips'}
             onClick={this.handleItemClick}
           >
@@ -110,6 +117,7 @@ class MenuPerfil extends Component {
             name='logros'
             active={activeItem === 'logros'}
             onClick={this.handleItemClick}
+            as={Link} to='/logros'
           >
               <Header as='h4'>
                 <Icon name='trophy' />

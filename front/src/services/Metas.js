@@ -11,8 +11,8 @@ export function getMetas() {
 export function addMeta(meta) {
 
     var formData = new FormData();
-    for (let k in post) {
-        formData.append(k, post[k]);
+    for (let k in meta) {
+        formData.append(k, meta[k]);
     }
 
     return fetch(baseUrl + '/metas/new', {
@@ -20,5 +20,5 @@ export function addMeta(meta) {
             body: formData
         })
         .then(r => r.json())
-        .then(post => post);
+        .then(meta => meta);
 }

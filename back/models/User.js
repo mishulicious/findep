@@ -6,6 +6,9 @@ const UserSchema = new Schema({
     email: String,
     name: String,
     profilePic: String,
+    metas: [{
+
+    }],
     expenses: [{
         type: Schema.Types.ObjectId,
         ref: "Expense"
