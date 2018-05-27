@@ -30,22 +30,24 @@ class Navbar extends Component {
   };
 
   componentWillMount(){
-    if(!localStorage.getItem("user")) return this.props.history.push('/inicia');
+    if(!localStorage.getItem("user")) return this.props.history.push('/');
     let user = JSON.parse(localStorage.getItem("user"));
     this.setState({user,isLoggedIn:true})
 }
 
   render() {
-    const { activeItem, user, isLoggedIn } = this.state;
+    const { activeItem, isLoggedIn } = this.state;
 
     return (
       <div>
       
-        <Menu secondary fixed="top">
-          <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleClick}> <Link to='/'>Home {user.name}</Link> </Menu.Item>
+        <Menu secondary>
+        <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleClick}> <Link to='/'><Image src="http://res.cloudinary.com/alinardz/image/upload/v1527385056/findep-logo-01.png" style={{"width":"150px"}}></Image></Link></Menu.Item>
+        
+          {/* <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleClick}> <Link to='/'>Home {user.name}</Link> </Menu.Item> */}
            <Menu.Menu position='right'>
 
-            <Menu.Item name='perfil' style={{display: isLoggedIn? 'block': 'none'}} active={activeItem === 'perfil'} onClick={this.handleClick}><Link to='/perfil'>Perfil</Link></Menu.Item>
+            <Menu.Item name='perfil' active={activeItem === 'perfil'} style={{display: isLoggedIn? 'block': 'none'}}  onClick={this.handleClick}><Link to='/perfil'>Perfil</Link></Menu.Item>
 
             <Modal size="small" trigger={<Menu.Item name='ingresa' style={{display: !isLoggedIn? 'block': 'none'}}><Link to='/'>Ingresa</Link></Menu.Item>}>
                 <Modal.Header>Ingresa</Modal.Header>
@@ -70,7 +72,7 @@ class Navbar extends Component {
 
             <Menu.Item name='diagnóstico' active={activeItem === 'diagnóstico'} onClick={this.handleClick}><Link to='/diagnostico'>Diagnóstico</Link></Menu.Item>
             
-            <Menu.Item name='logout' style={{display: isLoggedIn? 'block': 'none'}} active={activeItem === 'logout'} onClick={this.handleLogout}>Logout</Menu.Item>
+            <Menu.Item name='logout' style={{display: isLoggedIn? 'block': 'none'}} active={activeItem === 'logout'} onClick={this.handleLogout}>Cerrar Sesión</Menu.Item>
 
             <Menu.Item name='blog' active={activeItem === 'blog'} onClick={this.handleClick}><Link to='/blog'>Blog</Link></Menu.Item>
 

@@ -16,7 +16,7 @@
 }
 
 .secondary a:hover {
-    color: #da00f7;
+    color: #EB71A5;
 }
 
 .ui.secondary.menu .active.item {
@@ -24,7 +24,7 @@
 }
 
 .ui.secondary.menu .active.item a {
-    color: #da00f7 !important;
+    color: #EB71A5 !important;
 }
 
 a.item:hover {
@@ -33,7 +33,13 @@ a.item:hover {
 }
 
 h2 {
-    color: purple;
+    color: #32aaf2;
+    font-size: "2.714286rem";
+}
+
+h3 {
+    color: #5B386A;
+    font-size: "2.714286rem" !important;
 }
 
 .ui.vertical.menu {
@@ -45,6 +51,28 @@ h2 {
 }
 
 .comienza {
-    height: 400px;
-    background-image: "https://image.freepik.com/free-vector/shooting-star-and-star-universe-background-illustration_35632-56.jpg";
+    height: 400px !important;
+    background-image: url("http://res.cloudinary.com/alinardz/image/upload/v1527379446/comienza.png");
+}
+
+.ui.header {
+    color: white !important;
+}
+
+#imgportada {
+    margin: 30px 10%!important;
+    width: 500px !important;
+}
+
+.ui.segment {
+    padding: 0em 1em !important;
+}
+
+.btncom {
+    padding-top: 200px;
+}
+
+.ui.inverted.menu .teal.active.item,
+.ui.inverted.teal.menu {
+    background-color: #4F4976 !important;
 }

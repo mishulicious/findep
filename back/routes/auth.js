@@ -5,7 +5,7 @@ const User = require('../models/User');
 function isAuthenticated(req, res, next) {
     if (req.isAuthenticated()) return next();
     res.status(403);
-    res.send("Epape epale perro que hace aqui");
+    res.send("No estás autorizado");
 }
 
 router.post('/login', passport.authenticate('local'), (req, res, next) => {
@@ -25,7 +25,7 @@ router.post('/signup', (req, res) => {
 router.get('/logout', (req, res) => {
     req.logout();
     res.status(200);
-    res.json({ message: "Adios papud" });
+    res.json({ message: "Cerraste sesión" });
 });
 
 router.get("/profile", isAuthenticated, (req, res) => {

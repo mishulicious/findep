@@ -13,6 +13,8 @@ const path = require('path');
 const passport = require('./helpers/passport');
 const session = require('express-session');
 
+const cors = require("cors");
+
 mongoose.Promise = Promise;
 mongoose
     .connect(process.env.DATABASE, { useMongoClient: true })
@@ -80,6 +82,9 @@ app.use('/auth', auth);
 
 const expenses = require('./routes/expenses');
 app.use('/expenses', expenses);
+
+const metas = require('./routes/metas');
+app.use('/metas', metas);
 
 
 module.exports = app;

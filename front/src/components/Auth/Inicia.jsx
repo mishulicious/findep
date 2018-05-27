@@ -15,7 +15,7 @@ class Inicia extends Component{
         .then(user=>{
             localStorage.setItem("user", JSON.stringify(user));
             this.setState({user:{}});
-            this.props.history.push("/");
+            this.props.history.push("/perfil");
             window.location.reload();
             console.log("estás loggeado")
             return;
