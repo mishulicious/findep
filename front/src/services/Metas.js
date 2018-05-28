@@ -10,6 +10,8 @@ export function getMetas() {
 // Metas
 export function addMeta(meta) {
     const formData = new FormData();
+
+    //es como un push para objetos
     for (let k in meta) {
         formData.append(k, meta[k]);
     }
@@ -26,6 +28,19 @@ export function deleteMeta(id) {
     return fetch(baseUrl + '/metas/borrar/' + id, {
             method: 'delete'
         })
-        .then(response => response.json())
+        .then(r => r.json())
+        .then(meta => meta)
+}
+
+export function editMeta(id, meta) {
+    const formData = new FormData()
+    for (let k in meta) {
+        formData.append(k, meta[k]);
+    }
+    return fetch(baseUrl + '/metas/edit/' + id, {
+            method: 'put',
+            body: formData
+        })
+        .then(r => r.json())
         .then(meta => meta)
 }

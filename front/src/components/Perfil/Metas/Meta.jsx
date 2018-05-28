@@ -2,6 +2,7 @@ import React from 'react';
 import { Card, Image, Button, Progress} from 'semantic-ui-react';
 import {Progreso} from './Progreso';
 import {NuevaMeta} from './NuevaMeta';
+import EditarMeta from './EditarMeta';
 
 export const Meta =(props)=> {
         return(
@@ -27,9 +28,9 @@ export const Meta =(props)=> {
               <Progress size ="tiny" percent={props.percent} indicating label={"Progreso: " + props.percent + "%"}/>
                 <Button circular basic color='blue' icon='trash' onClick={()=>props.delete(props._id)}/>
                 <Button circular basic color='violet' icon='edit'/>
-            </Card.Content>
-
+              </Card.Content> 
           </Card>
+          <EditarMeta/>
           </div>
         )
 }

@@ -8,6 +8,7 @@ import Metas from './Metas/Metas';
 import Presupuesto from './Presupuesto/Presupuesto';
 import Tips from './Tips/Tips';
 import Logros from './Logros/Logros';
+import EditarMeta from '../Perfil/Metas/EditarMeta'
 
 
 export const RoutesPerfil = ()=>{
@@ -20,6 +21,7 @@ export const RoutesPerfil = ()=>{
             <Route path='/perfil/presupuesto' component={Presupuesto}/>
             <Route path='/perfil/tips' component={Tips}/>
             <Route path='/perfil/logros' component={Logros}/>
+            <Route path='/perfil/edit/:id' component={EditarMeta}/>
         </Switch>
     )
 };
