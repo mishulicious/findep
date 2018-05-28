@@ -1,9 +1,7 @@
 import React, { Component } from 'react';
 import {Meta} from './Meta';
-import {getMetas} from '../../../services/Metas';
-import NuevaMeta from './NuevaMeta';
-import MenuPerfil from '../MenuPerfil';
-import {Grid} from 'semantic-ui-react';
+import {getMetas, deleteMeta} from '../../../services/Metas';
+import {NuevaMeta} from './NuevaMeta';
 
 class Metas extends Component {
   state={
@@ -11,38 +9,56 @@ class Metas extends Component {
   };
 
   componentWillMount(){
-
     if(!localStorage.getItem("user")) return this.props.history.push('/');
-
     getMetas()
         .then(metas=>{
             this.setState({metas});
         })
         .catch(e=>console.error(e));
-}
+  }
+
+  handleDelete = (id) => {
+    console.log("borrado papi", id)
+    deleteMeta(id)
+    .then(meta=>{
+      let metas = this.state.metas.filter(m=>{
+        m._id !== meta._id;
+      })
+      console.log(metas);
+      this.setState({metas});
+      })
+  };
+
+  increment = () => {
+    console.log("estoy incrementando")
+      this.setState({
+      percent: this.state.percent >= 100 ? 0 : this.state.percent + 20,
+    })
+  }
 
   render() {
+    //console.log(this.state.metas)
     return (
       <section>
         <h2>Mis metas</h2>
-        <Grid divided='vertically'>
-            <Grid.Row columns={2} >
-                <Grid.Column width={3} style={{"paddingTop":"0", "height":"1000px"}}>
-                    <MenuPerfil/>
-                </Grid.Column>
+
+          <div style={{display:'flex', flexWrap:'wrap'}}>
+            {this.state.metas.map((meta, index)=>{
+              let total= this.state.metas[index].totalQuantity-this.state.metas[index].initialQuantity;
+              let percent= (this.state.metas[index].initialQuantity/this.state.metas[index].totalQuantity)*100;
+                return(
+                  <Meta {...meta} 
+                  key={meta._id}
+                  delete={this.handleDelete}
+                  total={ total }
+                  increment={this.increment}
+                  percent={percent}
+                  />
+                )
+            })}
+          <div style={{margin:"200px 2%" }}><NuevaMeta/></div>
+        </div>
                 
-                <Grid.Column width={13}>
-                <div style={{display:'flex'}}>
-                  {this.state.metas.map(meta=>{
-                    return(
-                      <Meta {...meta} key={meta._id}/>
-                    )
-                  })}
-                </div>
-                <NuevaMeta/>
-                </Grid.Column>
-            </Grid.Row>
-        </Grid> 
       </section>
     )
   }

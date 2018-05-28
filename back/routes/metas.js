@@ -32,4 +32,31 @@ router.get('/', (req, res) => {
         })
 });
 
+router.post('/editarmeta', (req, res) => {
+    Meta.findByIdAndUpdate(req.body._id, req.body, { new: true }, (err, doc) => {
+        if (err) return res.status(400).send(err);
+        res.json({
+            success: true,
+            doc
+        })
+    })
+})
+
+router.delete('/borrar/:id', (req, res) => {
+    let _id = req.params.id;
+    Meta.findByIdAndRemove(_id, (err, doc) => {
+        if (err) return res.status(400).send(err);
+        res.json(true)
+    })
+})
+
+/* router.post('/edit/:id', (req, res, next) => {
+    let _id = req.body.id;
+    Meta.findByIdAndUpdate(req.params.id, req.body)
+        .then(() => {
+            res.json(meta);
+        })
+        .catch(e => next(e))
+}) */
+
 module.exports = router;

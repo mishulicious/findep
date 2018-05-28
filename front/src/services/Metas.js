@@ -9,8 +9,7 @@ export function getMetas() {
 
 // Metas
 export function addMeta(meta) {
-
-    var formData = new FormData();
+    const formData = new FormData();
     for (let k in meta) {
         formData.append(k, meta[k]);
     }
@@ -21,4 +20,12 @@ export function addMeta(meta) {
         })
         .then(r => r.json())
         .then(meta => meta);
+}
+
+export function deleteMeta(id) {
+    return fetch(baseUrl + '/metas/borrar/' + id, {
+            method: 'delete'
+        })
+        .then(response => response.json())
+        .then(meta => meta)
 }

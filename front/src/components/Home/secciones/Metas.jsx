@@ -12,7 +12,7 @@ export const Metas = ()=>{
                 </Grid.Column>
                 <Grid.Column width={9}>
                     <div style={{"padding":"90px 10% 0 0", "fontSize":"1.51429rem"}}>
-                    <p>¿Cuál es tu sueño? ¿Ese viaje a Japón? ¿Pagar tus deudas? ¿Retirarte a los 30? Te ayudamos a crear el presupuesto ideal para lograrlo :)</p>
+                    <p>¿Cuál es tu sueño? ¿Ese viaje a Japón? ¿Pagar tus deudas? ¿Retirarte a los 30? Te ayudamos a crear el presupuesto ideal para lograrlo</p>
                     </div>
                 </Grid.Column>
                 </Grid.Row>

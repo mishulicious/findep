@@ -32,7 +32,7 @@ class MenuPerfil extends Component {
             name='resumen'
             active={activeItem === 'resumen'}
             onClick={this.handleItemClick}
-            as={Link} to='/perfil'
+            as={Link} to='/perfil/resumen'
           >
               <Header as='h4'>
               <Icon name='block layout' />
@@ -46,7 +46,7 @@ class MenuPerfil extends Component {
             name='diagnostico'
             active={activeItem === 'diagnostico'}
             onClick={this.handleItemClick}
-            as={Link} to='/diagnostico'
+            as={Link} to='/perfil/diagnostico'
           >
               <Header as='h4'>
                 <Icon name='file outline' />
@@ -60,7 +60,7 @@ class MenuPerfil extends Component {
             name='registro'
             active={activeItem === 'registro'}
             onClick={this.handleItemClick}
-            as={Link} to='/registro'
+            as={Link} to='/perfil/registro'
           >
               <Header as='h4'>
                 <Icon name='calendar outline' />
@@ -74,7 +74,7 @@ class MenuPerfil extends Component {
             name='metas'
             active={activeItem === 'metas'}
             onClick={this.handleItemClick}
-            as={Link} to='/metas'
+            as={Link} to='/perfil/metas'
           >
               <Header as='h4'>
                 <Icon name='tasks' />
@@ -88,7 +88,7 @@ class MenuPerfil extends Component {
             name='presupuesto'
             active={activeItem === 'presupuesto'}
             onClick={this.handleItemClick}
-            as={Link} to='/presupuesto'
+            as={Link} to='/perfil/presupuesto'
           >
               <Header as='h4'>
                 <Icon name='calculator' />
@@ -100,7 +100,7 @@ class MenuPerfil extends Component {
 
           <Menu.Item
             name='tips'
-            as={Link} to='/blog'
+            as={Link} to='/perfil/tips'
             active={activeItem === 'tips'}
             onClick={this.handleItemClick}
           >
@@ -117,12 +117,26 @@ class MenuPerfil extends Component {
             name='logros'
             active={activeItem === 'logros'}
             onClick={this.handleItemClick}
-            as={Link} to='/logros'
+            as={Link} to='/perfil/logros'
           >
               <Header as='h4'>
                 <Icon name='trophy' />
                 <Header.Content>
                   Logros
+                </Header.Content>
+              </Header>
+          </Menu.Item>
+
+        <Menu.Item
+            name='blog'
+            active={activeItem === 'blog'}
+            onClick={this.handleItemClick}
+            as={Link} to='/blog'
+          >
+              <Header as='h4'>
+                <Icon name='list ' />
+                <Header.Content>
+                  Blog
                 </Header.Content>
               </Header>
           </Menu.Item>

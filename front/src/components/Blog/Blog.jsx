@@ -1,37 +1,57 @@
 import React, {Component} from 'react';
-import {Label} from 'semantic-ui-react';
+import {Link} from 'react-router-dom';
 
 class Blog extends Component{
     render(){
         return(
            <div>
-               <h2>Categorías</h2>
-               <div>
-                <Label as='a' color='red' size="massive">
-                    Cetes
-                </Label>
-                <Label as='a' color='orange' size="massive">
-                    Ahorro para el retiro
-                </Label>
-                <Label as='a' color='yellow' size="massive">
-                    Seguros de gastos médicos
-                </Label>
-                <Label as='a' color='olive' size="massive">
-                    Créditos
-                </Label>
-                <Label as='a' color='green' size="massive">
-                    Fondo de emergencia
-                </Label>
-                <Label as='a' color='teal' size="massive">
-                    Criptomonedas
-                </Label>
-                <Label as='a' color='blue' size="massive">
-                    Hipotecas
-                </Label>
-                <Label as='a' color='violet' size="massive">
-                    Inversiones
-                </Label>
-               </div>
+               <h2 style={{fontSize:"2rem"}}>¿Qué quieres aprender hoy</h2>
+
+               <div className="containerBlog">
+                    <Link to='/blog' className="cardCat">
+                        <i className="card__circle"></i>
+                        <p>Seguros</p>
+                    </Link>
+
+                    <a href="#" className="cardCat card1">
+                        <i className="card__circle"></i>
+                        <p>Fondo para el retiro</p>
+                    </a>
+
+                    <a href="#" className="cardCat card--alt-3">
+                        <i className="card__circle"></i>
+                        <p>Tarjetas de crédito</p>
+                    </a>
+
+                    <a href="#" className="cardCat card--alt-2">
+                        <i className="card__circle"></i>
+                        <p>Fondo de emergencia</p>
+                    </a>
+
+                    <a href="#" className="cardCat">
+                        <i className="card__circle"></i>
+                        <p>Crédito de auto</p>
+                    </a>
+                    <a href="#" className="cardCat card--alt-2">
+                        <i className="card__circle"></i>
+                        <p>Hipoteca</p>
+                    </a>
+
+                    <a href="#" className="cardCat card--alt-3">
+                        <i className="card__circle"></i>
+                        <p>CETES</p>
+                    </a>
+                    <a href="#" className="cardCat card--alt-4">
+                        <i className="card__circle"></i>
+                        <p>Inversiones en la bolsa</p>
+                    </a>
+
+                    <a href="#" className="cardCat card1">
+                        <i className="card__circle"></i>
+                        <p>Criptomonedas</p>
+                    </a>
+                    </div>
+
            </div>
         )
     }

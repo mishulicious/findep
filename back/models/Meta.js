@@ -4,10 +4,11 @@ const Schema = mongoose.Schema;
 const MetaSchema = new Schema({
     name: String,
     picture: String,
-    date: String,
+    dateStart: String,
+    dateEnd: String,
     initialQuantity: Number,
-    category: String,
-    quantity: Number,
+    actualQuantity: Number,
+    totalQuantity: Number,
     user: {
         type: Schema.Types.ObjectId,
         ref: "User"

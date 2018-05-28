@@ -80,9 +80,6 @@ app.use('/', index);
 const auth = require('./routes/auth');
 app.use('/auth', auth);
 
-const expenses = require('./routes/expenses');
-app.use('/expenses', expenses);
-
 const metas = require('./routes/metas');
 app.use('/metas', metas);
 

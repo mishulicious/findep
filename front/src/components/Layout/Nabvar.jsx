@@ -46,7 +46,7 @@ class Navbar extends Component {
           <Image src="http://res.cloudinary.com/alinardz/image/upload/v1527385056/findep-logo-01.png" style={{width:"150px", marginLeft: isLoggedIn? '350%':'0'}}></Image></Menu.Item>
            <Menu.Menu position='right'>
 
-            <Menu.Item name='Perfil' active={activeItem === 'perfil'} style={{display: isLoggedIn? 'block': 'none'}}  onClick={this.handleClick} as={Link} to='/perfil'/>
+            <Menu.Item name='Perfil' active={activeItem === 'perfil'} style={{display: isLoggedIn? 'block': 'none'}}  onClick={this.handleClick} as={Link} to='/perfil/resumen'/>
 
             <Modal size="small" trigger={<Menu.Item name='ingresa' style={{display: !isLoggedIn? 'block': 'none'}}><Link to='/'>Ingresa</Link></Menu.Item>}>
                 <Modal.Header>Ingresa</Modal.Header>

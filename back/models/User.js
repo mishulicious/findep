@@ -7,11 +7,12 @@ const UserSchema = new Schema({
     name: String,
     profilePic: String,
     metas: [{
-
-    }],
-    expenses: [{
         type: Schema.Types.ObjectId,
-        ref: "Expense"
+        ref: "Meta"
+    }],
+    registros: [{
+        type: Schema.Types.ObjectId,
+        ref: "Registro"
     }]
 }, {
     timestamps: {

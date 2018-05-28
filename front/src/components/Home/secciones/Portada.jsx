@@ -1,6 +1,7 @@
 import React from 'react';
 import {Ingresa} from '../../Auth/Ingresa';
 import { Segment, Image, Grid } from 'semantic-ui-react';
+import Tilt from 'react-tilt';
 
 export const Portada = ()=>{
     return(
@@ -13,8 +14,9 @@ export const Portada = ()=>{
                  <Ingresa/>
                 </Grid.Column>
                 <Grid.Column width={9}>
-                    <Image src='http://res.cloudinary.com/alinardz/image/upload/v1527379675/portada.png' id="imgportada"/>
+                <Tilt className="Tilt" options={{ max : 30, scale: 1.05 , speed:          500 }}><Image src='http://res.cloudinary.com/alinardz/image/upload/v1527379675/portada.png' id="imgportada"/></Tilt>
                 </Grid.Column>
+                    
                 </Grid.Row>
             </Grid>
         </Segment>
