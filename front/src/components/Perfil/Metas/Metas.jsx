@@ -18,13 +18,13 @@ class Metas extends Component {
   }
 
   handleDelete = (id) => {
-    console.log("borrado papi", id)
+    //console.log("borrado papi", id)
     deleteMeta(id)
     .then(meta=>{
       let metas = this.state.metas.filter(m=>{
         m._id !== meta._id;
       })
-      console.log(metas);
+      alert(metas);
       this.setState({metas});
       })
   };
@@ -41,7 +41,6 @@ class Metas extends Component {
     return (
       <section>
         <h2>Mis metas</h2>
-
           <div style={{display:'flex', flexWrap:'wrap'}}>
             {this.state.metas.map((meta, index)=>{
               let total= this.state.metas[index].totalQuantity-this.state.metas[index].initialQuantity;

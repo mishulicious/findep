@@ -10,6 +10,8 @@ function isAuthenticated(req, res, next) {
     res.send("No estás autorizado");
 }
 
+
+//NUEVA META
 router.post('/new', upload.single("picture"), (req, res) => {
     req.body.picture = `${req.protocol}://${req.headers.host}/images/metas/` + req.file.filename;
     req.body.user = req.user._id;
@@ -28,6 +30,7 @@ router.post('/new', upload.single("picture"), (req, res) => {
         })
 });
 
+//GET ME ALL LAS METAS
 router.get('/', (req, res) => {
     Meta.find()
         .populate("user", "name")
@@ -40,6 +43,7 @@ router.get('/', (req, res) => {
         })
 });
 
+//BÓRRAME ESTA META
 router.delete('/borrar/:id', (req, res) => {
     Meta.findByIdAndRemove(req.params.id, (err, doc) => {
         if (err) return res.status(400).send(err);
@@ -47,18 +51,38 @@ router.delete('/borrar/:id', (req, res) => {
     })
 })
 
-router.get('/:id', function(req, res, next) {
+//DETALLE DE LA META
+router.get('/:id', (req, res, next) => {
     Meta.findById(req.params.id, function(err, post) {
         if (err) return next(err);
         res.json(post);
     });
 });
 
-router.put('/edit/:id', function(req, res, next) {
-    Meta.findByIdAndUpdate(req.params.id, req.body, function(err, post) {
-        if (err) return next(err);
-        res.json(post);
-    });
+//EDITAME ESTA META
+router.put('/edit/:id', (req, res, next) => {
+    Meta.findByIdAndUpdate(req.params.id, req.body, { new: true })
+        .then(meta => {
+            res.json(meta)
+        })
+        .catch(e => next(e))
 });
+
+// router.get('/user/:id', (req,res,next)=>{
+//     User.findById(req.params.id)
+//       .populate([{
+//         "path":'requests',
+//         "populate":{path:'from'}
+//       },{
+//         "path":"replies",
+//         "populate":{path:'from'}
+//       }])
+//       .then(users=>{
+//         return res.json(users)
+//       })
+//       .catch(e=>next(e))
+//   });
+
+
 
 module.exports = router;

@@ -25,7 +25,7 @@ export const Meta =(props)=> {
 
             <Card.Content extra>
 
-              <Progress size ="tiny" percent={props.percent} indicating label={"Progreso: " + props.percent + "%"}/>
+              <Progress size ="tiny" percent={props.percent} indicating label={"Progreso: " + Math.round(props.percent) + "%"}/>
                 <Button circular basic color='blue' icon='trash' onClick={()=>props.delete(props._id)}/>
                 <Button circular basic color='violet' icon='edit'/>
               </Card.Content> 

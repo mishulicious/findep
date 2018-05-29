@@ -1,16 +1,15 @@
 const baseUrl = 'http://localhost:3000';
 
-
+//MOSTRAR METAS
 export function getMetas() {
     return fetch(baseUrl + '/metas')
         .then(r => r.json())
         .then(data => data);
 }
 
-// Metas
+//AGREGAR META
 export function addMeta(meta) {
     const formData = new FormData();
-
     //es como un push para objetos
     for (let k in meta) {
         formData.append(k, meta[k]);
@@ -25,6 +24,7 @@ export function addMeta(meta) {
         .then(meta => meta);
 }
 
+//BORRAR META
 export function deleteMeta(id) {
     return fetch(baseUrl + '/metas/borrar/' + id, {
             method: 'delete'
@@ -33,6 +33,7 @@ export function deleteMeta(id) {
         .then(meta => meta)
 }
 
+//EDITAR META
 export function editMeta(id, meta) {
     const formData = new FormData()
     for (let k in meta) {

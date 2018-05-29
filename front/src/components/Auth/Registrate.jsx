@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import { Form, Button, Icon } from 'semantic-ui-react';
-
 import firebase from 'firebase';
 import {signUp} from "../../services/Auth";
 import {withRouter, Redirect} from 'react-router-dom';
@@ -8,11 +7,10 @@ import {withRouter, Redirect} from 'react-router-dom';
 
 class Registrate extends Component{
     state= {
-        user: {
-            name:"",
-            email:""
-        },
+        user: {},
     };
+
+    
 
     authWithFacebook(){
     const facebookProvider= new firebase.auth.FacebookAuthProvider();
