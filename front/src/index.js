@@ -9,7 +9,6 @@ import firebase from 'firebase';
 //Style
 import 'semantic-ui-css/semantic.min.css';
 
-
 const config = {
     apiKey: "AIzaSyCQ8YL8HUyX00mOPvbevPM9zURV4IacDmg",
     authDomain: "findepplatform.firebaseapp.com",

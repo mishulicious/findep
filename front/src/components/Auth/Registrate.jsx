@@ -15,7 +15,14 @@ class Registrate extends Component{
     };
 
     authWithFacebook(){
-        alert("facebook")
+    const facebookProvider= new firebase.auth.FacebookAuthProvider();
+        firebase.auth().signInWithPopup(facebookProvider)
+        .then((result)=> {    
+            //alert(result.user.displayName + " " + result.user.email)
+            this.state.user.name=result.user.displayName;
+            this.state.user.email=result.user.email;
+            signUp(this.state.user)
+        })
     }
 
     authWithGoogle=()=>{
