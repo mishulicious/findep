@@ -18,6 +18,7 @@ export function addMeta(meta) {
 
     return fetch(baseUrl + '/metas/new', {
             method: 'post',
+            credentials: "include",
             body: formData
         })
         .then(r => r.json())

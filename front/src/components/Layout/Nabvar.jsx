@@ -30,7 +30,7 @@ class Navbar extends Component {
   };
 
   componentWillMount(){
-    if(!localStorage.getItem("user")) return this.props.history.push('/');
+    if(!localStorage.getItem("user")) return;
     let user = JSON.parse(localStorage.getItem("user"));
     this.setState({user,isLoggedIn:true})
 }

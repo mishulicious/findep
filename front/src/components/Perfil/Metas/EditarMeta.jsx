@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import { Form, Button,Input, Label, Image,Modal } from 'semantic-ui-react';
-import {addMeta} from "../../../services/Metas";
+import {editMeta} from "../../../services/Metas";
 import {withRouter} from 'react-router-dom';
 import MetaForm from './MetaForm';
 
@@ -11,7 +11,6 @@ class EditarMeta extends Component{
         meta: {}
     };
     
-
     componentWillMount(){
         if(!localStorage.getItem("user")) return this.props.history.push('/login');
         let user = JSON.parse(localStorage.getItem("user"));
@@ -33,7 +32,7 @@ class EditarMeta extends Component{
 
     handleSubmit = (e) => {
         e.preventDefault();
-        addMeta(this.state.meta)
+        editMeta(this.state.meta)
         .then(meta=>{
             this.props.history.push('/perfil/metas');
             window.location.reload();

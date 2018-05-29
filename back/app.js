@@ -83,5 +83,7 @@ app.use('/auth', auth);
 const metas = require('./routes/metas');
 app.use('/metas', metas);
 
+// const diagnostico = require('./routes/diagnostico');
+// app.use('/diagnostico', diagnostico);
 
 module.exports = app;

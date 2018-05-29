@@ -2,6 +2,7 @@ const router = require('express').Router();
 const Meta = require('../models/Meta');
 const multer = require('multer');
 const upload = multer({ dest: './public/images/metas' });
+const User = require('../models/User');
 
 function isAuthenticated(req, res, next) {
     if (req.isAuthenticated()) return next();
@@ -11,10 +12,17 @@ function isAuthenticated(req, res, next) {
 
 router.post('/new', upload.single("picture"), (req, res) => {
     req.body.picture = `${req.protocol}://${req.headers.host}/images/metas/` + req.file.filename;
+    req.body.user = req.user._id;
     Meta.create(req.body)
         .then(meta => {
-            res.json(meta);
-            return User.findByIdAndUpdate(req.user._id, req.user)
+            console.log("meta", meta)
+                //req.user.metas.push(meta._id);
+            User.findByIdAndUpdate(req.user._id, { $push: { metas: meta._id } }, { new: true })
+                //User.findByIdAndUpdate(req.user._id, req.user)
+                .then(user => {
+                    console.log("aasd", user);
+                    res.json(meta)
+                })
         }).catch(e => {
             res.send(e);
         })
