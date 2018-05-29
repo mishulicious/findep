@@ -3,8 +3,6 @@ import update from 'react-addons-update';
 import quizQuestions from '../../../api/quizQuestions.js';
 import Quiz from '../Diagnostico/Quiz';
 import Result from '../Diagnostico/Result';
-import got from '../../../images/got.jpg';
-import logo from '../../../svg/logo.svg';
  
 class Diagnostico extends Component {
   constructor(props) {
@@ -129,10 +127,6 @@ class Diagnostico extends Component {
         {this.state.result ? this.renderResult() : this.renderQuiz()}
       </div>
     );
- 
- 
- 
- 
   }
  
 }

@@ -5,6 +5,7 @@ import Perfil from './components/Perfil/Perfil';
 import {Ingresa} from './components/Auth/Ingresa';
 import Blog from './components/Blog/Blog';
 import Diagnostico from './components/Perfil/Diagnostico/Diagnostico';
+import DetalleArticulo from './components/Blog/Articulos/DetalleArticulo';
 
 export const Routes = ()=>{
     return(
@@ -14,6 +15,7 @@ export const Routes = ()=>{
             <Route path='/ingresa' component={Ingresa}/>
             <Route path='/blog' component={Blog}/>
             <Route path='/diagnostico' component={Diagnostico}/>
+            <Route path='/blog/:id' component={DetalleArticulo}/>
         </Switch>
     )
 };

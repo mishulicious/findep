@@ -1,14 +1,16 @@
 import React, {Component} from 'react';
 import {Link} from 'react-router-dom';
+import ListaArticulos from './Articulos/ListaArticulos';
 
 class Blog extends Component{
     render(){
         return(
            <div>
+               <ListaArticulos/>
                <h2 style={{fontSize:"2rem"}}>¿Qué quieres aprender hoy</h2>
 
                <div className="containerBlog">
-                    <Link to='/blog' className="cardCat">
+                    <Link to='/blog/seguros' className="cardCat">
                         <i className="card__circle"></i>
                         <p>Seguros</p>
                     </Link>
