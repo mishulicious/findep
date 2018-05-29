@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import {Meta} from './Meta';
 import {getMetas, deleteMeta} from '../../../services/Metas';
-import {NuevaMeta} from './NuevaMeta';
+import MetaForm from './MetaForm';
 
 class Metas extends Component {
   state={
@@ -55,7 +55,7 @@ class Metas extends Component {
                   />
                 )
             })}
-          <div style={{margin:"200px 2%" }}><NuevaMeta/></div>
+          <div style={{margin:"200px 2%" }}><MetaForm /></div>
         </div>
                 
       </section>
