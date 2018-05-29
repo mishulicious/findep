@@ -16,7 +16,8 @@ router.post('/signup', (req, res) => {
     /*     if (req.body.password !== req.body.password2) {
             return res.render("auth/signup", { info: "Las contraseñas no coinciden :(" })
         } */
-    User.register(req.body, req.body.password, (err, user) => {
+    console.log(req.body)
+    User.create(req.body, (err, user) => {
         if (err) return res.json(err);
         res.json(user);
     })

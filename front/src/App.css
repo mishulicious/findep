@@ -19,6 +19,17 @@
     color: #EB71A5;
 }
 
+.menuNav a.item:hover {
+    color: #EB71A5 !important;
+}
+
+.menuNav .ui.link.menu .item:active,
+.ui.menu .link.item:active,
+.ui.menu a.item:active {
+    background: none !important;
+    color: #EB71A5 !important;
+}
+
 .ui.secondary.menu .active.item {
     background: none !important;
     color: #EB71A5 !important;
