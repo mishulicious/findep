@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import {Meta} from './Meta';
 import {getMetas, deleteMeta} from '../../../services/Metas';
+import { Button } from 'semantic-ui-react';
 import MetaForm from './MetaForm';
 
 class Metas extends Component {
@@ -17,24 +18,19 @@ class Metas extends Component {
         .catch(e=>console.error(e));
   }
 
+  //BORRAR META
   handleDelete = (id) => {
     //console.log("borrado papi", id)
     deleteMeta(id)
     .then(meta=>{
       let metas = this.state.metas.filter(m=>{
-        m._id !== meta._id;
+        return m._id !== meta._id;
       })
-      alert(metas);
       this.setState({metas});
       })
   };
 
-  increment = () => {
-    console.log("estoy incrementando")
-      this.setState({
-      percent: this.state.percent >= 100 ? 0 : this.state.percent + 20,
-    })
-  }
+
 
   render() {
     //console.log(this.state.metas)
@@ -50,12 +46,11 @@ class Metas extends Component {
                   key={meta._id}
                   delete={this.handleDelete}
                   total={ total }
-                  increment={this.increment}
                   percent={percent}
                   />
                 )
             })}
-          <div style={{margin:"200px 2%" }}><MetaForm /></div>
+          <div style={{margin:"200px 2%" }}><MetaForm trigger={<Button size="huge" inverted color='violet'>Crear Meta</Button>} /></div>
         </div>
                 
       </section>

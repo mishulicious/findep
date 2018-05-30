@@ -2,9 +2,8 @@ const mongoose = require('mongoose');
 const Schema = mongoose.Schema;
 
 const RegistroSchema = new Schema({
-    type: String,
     category: String,
-    name: String,
+    description: String,
     quantity: Number,
     date: String,
     user: {
