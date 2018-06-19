@@ -1,5 +1,5 @@
 import React, {Component} from 'react';
-import { Form, Button, Icon } from 'semantic-ui-react';
+import { Form, Button } from 'semantic-ui-react';
 import firebase from 'firebase';
 import {signUp} from "../../services/Auth";
 import {withRouter, Redirect} from 'react-router-dom';
@@ -17,8 +17,8 @@ class Registrate extends Component{
         firebase.auth().signInWithPopup(facebookProvider)
         .then((result)=> {    
             //alert(result.user.displayName + " " + result.user.email)
-            this.state.user.name=result.user.displayName;
-            this.state.user.email=result.user.email;
+            //this.state.user.name=result.user.displayName;
+            //this.state.user.email=result.user.email;
             signUp(this.state.user)
         })
     }
@@ -29,8 +29,8 @@ class Registrate extends Component{
             .signInWithPopup(provider)
             .then((result)=> {    
                 //alert(result.user.displayName + " " + result.user.email)
-                this.state.user.name=result.user.displayName;
-                this.state.user.email=result.user.email;
+                //this.state.user.name=result.user.displayName;
+                //this.state.user.email=result.user.email;
                 signUp(this.state.user)
             })
     }
@@ -66,10 +66,10 @@ class Registrate extends Component{
                 <Form.Group widths='equal' style={{marginLeft:"10%"}}>
                     
                     <Button color='facebook' onClick={this.authWithFacebook}>
-                        <Icon name='facebook' /> Facebook
+                     Facebook
                     </Button>
                     <Button color='google plus' onClick={this.authWithGoogle}>
-                        <Icon name='google' />  Google  
+                    Google  
                     </Button>
                 </Form.Group>
             </Form>
@@ -89,9 +89,6 @@ class Registrate extends Component{
                 <label>Repite tu contraseña</label>
                 <input type="password" name="password2" id="password2Sign" placeholder='xxxxx'/>
             </Form.Field>
-    {/*                         <Form.Field>
-            <Checkbox label='Acepto los términos y condiciones' />
-            </Form.Field> */}
             <Form.Group widths='equal'>
                 <Button className='inicia' inverted color='blue' htmlType="submit" onClick={this.handleRedirect}>Regístrate</Button>
             </Form.Group>

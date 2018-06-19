@@ -1,5 +1,6 @@
 import React from 'react';
-import { Segment, Grid } from 'semantic-ui-react';
+import { Segment, Grid, Image } from 'semantic-ui-react';
+import Tilt from 'react-tilt';
 
 export const Monitorea = ()=>{
     return(
@@ -13,7 +14,7 @@ export const Monitorea = ()=>{
                 </div>
                 </Grid.Column>
                 <Grid.Column width={9}>
-                <img style={{"width":"450px"}} src="http://res.cloudinary.com/alinardz/image/upload/v1527387530/avances-01.png" alt=""/>
+                    <Tilt className="Tilt" options={{ max : 30, scale: 1.05 , speed: 500 }}><Image style={{width:"450px",marginLeft: "17%"}} src="https://res.cloudinary.com/alinardz/image/upload/v1527387530/avances-01.png" alt=""/></Tilt>   
                 </Grid.Column>
                 </Grid.Row>
             </Grid> 

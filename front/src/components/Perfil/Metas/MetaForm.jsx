@@ -3,7 +3,6 @@ import { Form, Button,Input, Label, Modal, Image } from 'semantic-ui-react';
 import {addMeta} from "../../../services/Metas";
 import {withRouter} from 'react-router-dom';
 
-
 //this.props
 class MetaForm extends Component{
 
@@ -27,6 +26,7 @@ class MetaForm extends Component{
 
     handleSubmit = (e) => {
         e.preventDefault();
+        console.log(this.state.meta)
         addMeta(this.state.meta)
         .then(meta=>{
             this.props.history.push('/perfil/metas');
@@ -38,7 +38,7 @@ class MetaForm extends Component{
         return(
             <Modal  size="small" dimmer='blurring' trigger={this.props.trigger}>
                 <Modal.Content image>
-                <Image wrapped size='medium' src='http://bldgwlf.com/wp-content/uploads/2016/01/Naomi-Wilkinson-03.gif' />
+                <Image wrapped size='medium' src='https://res.cloudinary.com/alinardz/image/upload/v1527697663/juguito.gif' />
                 <Modal.Description style={{"width":"45%"}}>
 
                      <Form onSubmit={this.handleSubmit}>

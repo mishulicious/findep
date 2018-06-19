@@ -12,7 +12,6 @@ const path = require('path');
 //authenticate
 const passport = require('./helpers/passport');
 const session = require('express-session');
-
 const cors = require("cors");
 
 mongoose.Promise = Promise;
@@ -55,7 +54,6 @@ app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
 
 // Express View engine setup
-
 app.use(require('node-sass-middleware')({
     src: path.join(__dirname, 'public'),
     dest: path.join(__dirname, 'public'),
@@ -83,7 +81,7 @@ app.use('/auth', auth);
 const metas = require('./routes/metas');
 app.use('/metas', metas);
 
-// const diagnostico = require('./routes/diagnostico');
-// app.use('/diagnostico', diagnostico);
+const registros = require('./routes/registros');
+app.use('/registros', registros);
 
 module.exports = app;

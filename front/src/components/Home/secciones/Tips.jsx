@@ -1,6 +1,7 @@
 import React from 'react';
 import {Link} from 'react-router-dom';
-import { Segment, Button, Grid } from 'semantic-ui-react';
+import { Segment, Button, Grid, Image } from 'semantic-ui-react';
+import Tilt from 'react-tilt';
 
 export const Tips = ()=>{
     return(
@@ -9,7 +10,7 @@ export const Tips = ()=>{
             <Grid divided='vertically'>
                 <Grid.Row columns={2} >
                 <Grid.Column width={7}>
-                    <img style={{"width":"350px"}} src="https://res.cloudinary.com/alinardz/image/upload/v1527385831/Untitled_Artwork_7.png" alt=""/>
+                    <Tilt className="Tilt" options={{ max : 30, scale: 1.05 , speed: 500 }}><Image style={{width:"350px",marginLeft: "17%"}} src="https://res.cloudinary.com/alinardz/image/upload/v1527385831/Untitled_Artwork_7.png" alt=""/></Tilt>         
                 </Grid.Column>
                 <Grid.Column width={9}>
                     <div style={{"padding":"70px 10% 0 0", "fontSize":"1.51429rem"}}>

@@ -5,11 +5,13 @@ import Question from './Question';
 import QuestionCount from './QuestionCount';
 import AnswerOption from './AnswerOptions';
 import ReactCSSTransitionGroup from 'react-addons-css-transition-group';
+import {Segment} from 'semantic-ui-react';
  
  
 function Quiz(props) {
  
 	function renderAnswerOptions(key) {
+		
 		return (
 			<AnswerOption
 				key={key.content}
@@ -25,6 +27,7 @@ function Quiz(props) {
  
  
 	return (
+		<Segment>
 		<ReactCSSTransitionGroup
 			className="container"
 			component="div"
@@ -46,6 +49,8 @@ function Quiz(props) {
 			 </div>
  
 		</ReactCSSTransitionGroup>
+
+		</Segment>
  
  
  

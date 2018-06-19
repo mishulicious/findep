@@ -1,3 +1,4 @@
+//const baseUrl = 'https://findep.herokuapp.com';
 const baseUrl = 'http://localhost:3000';
 
 //MOSTRAR METAS
@@ -9,12 +10,12 @@ export function getMetas() {
 
 //AGREGAR META
 export function addMeta(meta) {
-    const formData = new FormData();
+    console.log(meta)
+    let formData = new FormData();
     //es como un push para objetos
     for (let k in meta) {
         formData.append(k, meta[k]);
     }
-
     return fetch(baseUrl + '/metas/new', {
             method: 'post',
             credentials: "include",

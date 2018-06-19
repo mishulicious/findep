@@ -4,7 +4,7 @@ import MetaForm from './MetaForm';
 
 export const Meta =(props)=> {
         return(
-          <div style={{marginLeft:"3%"}}>
+          <div style={{marginLeft:"3%", marginBottom:"20px"}}>
             <Card>
             <Image src={props.picture ? props.picture : "https://zos.alipayobjects.com/rmsportal/ODTLcjxAfvqbxHnVXCYX.png"} />
             <Card.Content>

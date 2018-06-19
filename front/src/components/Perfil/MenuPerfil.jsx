@@ -57,15 +57,15 @@ class MenuPerfil extends Component {
           </Menu.Item>
 
           <Menu.Item
-            name='registro'
-            active={activeItem === 'registro'}
+            name='registros'
+            active={activeItem === 'registros'}
             onClick={this.handleItemClick}
-            as={Link} to='/perfil/registro'
+            as={Link} to='/perfil/registros'
           >
               <Header as='h4'>
                 <Icon name='calendar outline' />
                 <Header.Content>
-                  Registro
+                  Registros
                 </Header.Content>
               </Header>
           </Menu.Item>
@@ -105,9 +105,9 @@ class MenuPerfil extends Component {
             onClick={this.handleItemClick}
           >
               <Header as='h4'>
-                <Icon name='idea' />
+                <Icon name='lab' />
                 <Header.Content>
-                  Tips
+                  Fórmula secreta
                 </Header.Content>
               </Header>
           </Menu.Item>
@@ -134,7 +134,7 @@ class MenuPerfil extends Component {
             as={Link} to='/blog'
           >
               <Header as='h4'>
-                <Icon name='list ' />
+                <Icon name='list' />
                 <Header.Content>
                   Blog
                 </Header.Content>

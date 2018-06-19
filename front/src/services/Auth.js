@@ -1,5 +1,5 @@
+//const baseUrl = 'https://findep.herokuapp.com';
 const baseUrl = 'http://localhost:3000';
-
 
 export function signUp(user) {
     return fetch(baseUrl + '/auth/signup', {

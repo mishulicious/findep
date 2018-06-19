@@ -17,14 +17,3 @@ export const Articulo = ({id, title, poster,description}) =>{
         </div> 
     )
 }
-
-
-
-
-
-{/* 
-<Link to={`blog/${id}`}>
-     <img src={poster} style={{width:100}} alt=""/>
-     <h2>{title}</h2>
- </Link>
-*/}

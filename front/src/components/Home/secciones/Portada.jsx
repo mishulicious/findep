@@ -14,7 +14,7 @@ export const Portada = ()=>{
                  <Ingresa/>
                 </Grid.Column>
                 <Grid.Column width={9}>
-                <Tilt className="Tilt" options={{ max : 30, scale: 1.05 , speed:          500 }}><Image src='http://res.cloudinary.com/alinardz/image/upload/v1527379675/portada.png' id="imgportada"/></Tilt>
+                <Tilt className="Tilt" options={{ max : 30, scale: 1.05 , speed: 500 }}><Image src='https://res.cloudinary.com/alinardz/image/upload/v1527379675/portada.png' id="imgportada"/></Tilt>
                 </Grid.Column>
                     
                 </Grid.Row>

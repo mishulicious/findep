@@ -7,7 +7,7 @@ export const Ingresa = ()=>{
             <Modal size="small" dimmer='blurring' trigger={<Button size="huge" inverted color='violet'>Regístrate</Button> }>
                 <Modal.Header>Ingresa</Modal.Header>
                 <Modal.Content image>
-                <Image wrapped size='medium' src='http://bldgwlf.com/wp-content/uploads/2016/01/Naomi-Wilkinson-03.gif' />
+                <Image wrapped size='medium' src='https://res.cloudinary.com/alinardz/image/upload/v1527697663/juguito.gif' />
                 <Modal.Description style={{"width":"45%"}}>
                     <Registrate/>
                 </Modal.Description>

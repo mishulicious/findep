@@ -3,7 +3,7 @@ import {Switch, Route} from 'react-router-dom';
 
 import Resumen from './Resumen/Resumen';
 import Diagnostico from './Diagnostico/Diagnostico';
-import Registro from './Registro/Registro';
+import Registros from './Registros/Registros';
 import Metas from './Metas/Metas';
 import Presupuesto from './Presupuesto/Presupuesto';
 import Tips from './Tips/Tips';
@@ -15,7 +15,7 @@ export const RoutesPerfil = ()=>{
         <Switch>
             <Route path='/perfil/resumen' component={Resumen}/>
             <Route path='/perfil/diagnostico' component={Diagnostico}/>
-            <Route path='/perfil/registro' component={Registro}/>
+            <Route path='/perfil/registros' component={Registros}/>
             <Route path='/perfil/metas' component={Metas}/>
             <Route path='/perfil/presupuesto' component={Presupuesto}/>
             <Route path='/perfil/tips' component={Tips}/>

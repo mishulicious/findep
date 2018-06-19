@@ -43,15 +43,15 @@ class Navbar extends Component {
       
         <Menu secondary>
         <Menu.Item name='home' active={activeItem === 'home'} onClick={this.handleClick} as={Link} to='/'>
-          <Image src="http://res.cloudinary.com/alinardz/image/upload/v1527385056/findep-logo-01.png" style={{width:"150px", marginLeft: isLoggedIn? '350%':'0'}}></Image></Menu.Item>
+          <Image src="https://res.cloudinary.com/alinardz/image/upload/v1527385056/findep-logo-01.png" style={{width:"150px", marginLeft: isLoggedIn? '350%':'0'}}></Image></Menu.Item>
            <Menu.Menu position='right'>
 
             <Menu.Item name='Perfil' active={activeItem === 'perfil'} style={{display: isLoggedIn? 'block': 'none'}}  onClick={this.handleClick} as={Link} to='/perfil/resumen'/>
 
-            <Modal size="small" trigger={<Menu.Item name='registrate' style={{display: !isLoggedIn? 'block': 'none'}}><Link to='/'>Regístrate</Link></Menu.Item>}>
+            <Modal dimmer="blurring" size="small" trigger={<Menu.Item name='registrate' style={{display: !isLoggedIn? 'block': 'none'}}><Link to='/'>Regístrate</Link></Menu.Item>}>
                 <Modal.Header>Regístrate</Modal.Header>
                 <Modal.Content image>
-                <Image wrapped size='medium' src='http://bldgwlf.com/wp-content/uploads/2016/01/Naomi-Wilkinson-03.gif' />
+                <Image wrapped size='medium' src='https://res.cloudinary.com/alinardz/image/upload/v1527697663/juguito.gif' />
                 <Modal.Description style={{"width":"45%"}}>
                     <Registrate/>
                 </Modal.Description>
@@ -59,10 +59,10 @@ class Navbar extends Component {
             </Modal>
 
 
-            <Modal size="small" trigger={<Menu.Item name='ingresa' style={{display: !isLoggedIn? 'block': 'none'}} as={Link} to='/'>Inicia Sesión</Menu.Item>}>
+            <Modal dimmer="blurring"size="small" trigger={<Menu.Item name='ingresa' style={{display: !isLoggedIn? 'block': 'none'}} as={Link} to='/'>Inicia Sesión</Menu.Item>}>
                 <Modal.Header>Inicia Sesión</Modal.Header>
                 <Modal.Content image>
-                <Image wrapped size='medium' src='http://bldgwlf.com/wp-content/uploads/2016/01/Naomi-Wilkinson-03.gif' />
+                <Image wrapped size='medium' src='https://res.cloudinary.com/alinardz/image/upload/v1527697663/juguito.gif' />
                 <Modal.Description style={{"width":"45%"}}>
                     <Inicia/>
                 </Modal.Description>

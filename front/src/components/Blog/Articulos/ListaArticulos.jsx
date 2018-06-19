@@ -1,32 +1,10 @@
-import React, {Component} from 'react';
-import {Articulo} from './Articulo';
-import {Articulos} from '../../../articulos';
+import React from 'react';
 
-class ListaArticulos extends Component{
-    state={
-        movies: Articulos,
-    }
-
-    render(){
+export const ListaArticulos=()=>{
         return(
             <div>
-                <div style={styles.conFlex}>
-                    {this.state.movies.map(movie=>{
-                        return(
-                            <Articulo key={movie.id} movie={movie} {...movie}/>
-                        );
-                    })}
-                </div>
+                <h1>Lista de articulos</h1>
             </div>
         );
-    }
 }
 
-const styles = {
-    conFlex: {
-        display: 'flex',
-        flexWrap:'wrap',
-    }
-}
-
-export default ListaArticulos;

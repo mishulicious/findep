@@ -6,6 +6,7 @@ const MetaSchema = new Schema({
     picture: String,
     dateStart: String,
     dateEnd: String,
+    tags: [String],
     initialQuantity: Number,
     actualQuantity: Number,
     totalQuantity: Number,
